@@ -2,6 +2,7 @@
   const addbtn = document.querySelector("#addbookbtn");
   const closebtn = document.querySelector("#submitbtn");
   const formElement = document.querySelector("form");
+  const bookdiv = document.getElementsByClassName("list")[0];
 
   dialogform.close();
 
@@ -18,13 +19,6 @@
        this.id=crypto.randomUUID();
    }
  const BookArray = [];
-
- /* //testing
- addToArray("aaa","llll","jdowj","readd");
- addToArray("aaa","llll","jdowj","readd");
- addToArray("aaa","llll","jdowj","readd");
- console.log(BookArray);
- // */
 
 //الداله الي تضيف الكتاب للمصفوفه حتاخذ القيم كارقيومنت وتضيفهم للكتاب الجديد وتدفعهم للمصفوفه
   function addToArray(title,author,description,read){
@@ -49,11 +43,68 @@
   
   //using the data value as argument for the new book object which will be added to the array
    addToArray(title,author,description,read);
-  
+    
+
+
+   //استدعاء الداله الي تظهر العناصر بالhtml
+   showBook(BookArray);
+
    //cleaning the form after each submit
    formElement.reset();
    dialogform.close();
    console.log(BookArray);
 
  })
+
+ //function for displying the array books 
+function showBook(arr){
+
+    bookdiv.textContent = "";
+   for(let book of arr){
+     
+
+      const card = document.createElement("div");
+      card.classList.add("cardbook");
+
+      const titleElement = document.createElement("h2");
+      titleElement.textContent = book.title;
+      card.appendChild(titleElement);
+
+       const authorElement = document.createElement("h3");
+      authorElement.textContent = `Author : ${book.author}`;
+      card.appendChild(authorElement);
+
+       const descElement = document.createElement("p");
+      descElement.textContent = `Description : ${book.description}`;
+      card.appendChild(descElement);
+
+      const statuebtn = document.createElement("select");
+      statuebtn.classList.add("selects")
+
+      const opYes = document.createElement("option");
+      opYes.id="option1";
+      opYes.value = "true";
+      opYes.textContent="Read";
+      statuebtn.appendChild(opYes);
+
+    const opno = document.createElement("option");
+    opno.id="option2";
+    opno.value = "false";
+      opno.textContent="Not Read";
+      statuebtn.appendChild(opno);
+
+      //نربط القيمه الحاليه لحاله القراءه 
+      statuebtn.value = book.read.toString();
+
+      //هذا حته لما نغير الحاله مال قراءه تتغير بالمصفوفه هم
+      statuebtn.addEventListener("change", (e)=>{
+        book.read = e.target.value === "true";
+        console.log(`Book ${book.title} read status updated to: ${book.read}`);
+      });
+
+      card.appendChild(statuebtn);
+
+     bookdiv.appendChild(card);
+   }
+}
  

@@ -5,6 +5,8 @@
 }
 
 body{
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     padding: 0%;
@@ -117,11 +119,6 @@ span {
  box-shadow:0 2px 4px rgba(35, 35, 35, 0.2) inset;
 }
 
-
-
-
-
-
 dialog {
   border: none;
   border-radius: 10px;
@@ -137,4 +134,59 @@ dialog {
 
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.6);
+}
+
+ /*هنا استخدام كريد*/
+/* .list{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 20px;
+  padding: 30px;
+} */
+
+
+/*using flex*/
+.list {
+  display: flex;
+  flex-wrap: wrap;       /* يسمح للبطاقات بالانتقال لسطر ثاني */
+  gap: 20px;             /* مسافة بين الكارتات */
+  justify-content: center; /* يبدأ من اليسار */
+}
+
+.cardbook{
+ width: 300px;
+ height: 270px;
+ box-sizing: border-box;
+ margin: 15px;
+ border: 2px solid #2c2a26cd;
+ border-radius: 5px;
+ background-color: 	#dadada;
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+ color: #2b2a26;
+ word-wrap: break-word;
+ padding: 20px;
+}
+h2{
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #2b2a26;
+}
+p{
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.selects{
+  background-color:#57564f86;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  color:#2e2c29;
+ margin-top: 10px;
+ font-weight: bold;
 }
