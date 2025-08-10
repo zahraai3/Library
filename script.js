@@ -46,13 +46,16 @@
     
 
 
-   //استدعاء الداله الي تظهر العناصر بالhtml
-   showBook(BookArray);
+  /*  //استدعاء الداله الي تظهر العناصر بالhtml
+   showBook(BookArray); */
 
    //cleaning the form after each submit
    formElement.reset();
    dialogform.close();
    console.log(BookArray);
+
+    //استدعاء الداله الي تظهر العناصر بالhtml
+   showBook(BookArray);
 
  })
 
@@ -87,9 +90,9 @@ function showBook(arr){
       opYes.textContent="Read";
       statuebtn.appendChild(opYes);
 
-    const opno = document.createElement("option");
-    opno.id="option2";
-    opno.value = "false";
+      const opno = document.createElement("option");
+      opno.id="option2";
+      opno.value = "false";
       opno.textContent="Not Read";
       statuebtn.appendChild(opno);
 
@@ -102,9 +105,26 @@ function showBook(arr){
         console.log(`Book ${book.title} read status updated to: ${book.read}`);
       });
 
+        const deletebtn = document.createElement("button");
+      deletebtn.id="del";
+      deletebtn.textContent="Delete"
+      deletebtn.addEventListener("click",()=>{
+      
+        const index = BookArray.findIndex(b => b.id ===book.id);
+
+        if(index !== -1){
+          BookArray.splice(index,1);
+        }
+
+        showBook(BookArray);
+     });
+
       card.appendChild(statuebtn);
+      card.appendChild(deletebtn);
 
      bookdiv.appendChild(card);
    }
 }
+
+
  

@@ -50,7 +50,6 @@ h1{
 #addbookbtn:active {
   transform: scale(0.95); /* يصغر حجمه بنسبة 5% */
   background-color: #241e1e; /* لون أغمق شوي */
- 
 }
 
 /* .booklist{
@@ -156,8 +155,8 @@ dialog::backdrop {
 }
 
 .cardbook{
- width: 300px;
- height: 270px;
+ width: 350px;
+ height: 300px;
  box-sizing: border-box;
  margin: 15px;
  border: 2px solid #2c2a26cd;
@@ -169,6 +168,9 @@ dialog::backdrop {
  color: #2b2a26;
  word-wrap: break-word;
  padding: 20px;
+
+overflow-y: auto;
+
 }
 h2{
   font-weight: 700;
@@ -189,4 +191,24 @@ p{
   color:#2e2c29;
  margin-top: 10px;
  font-weight: bold;
+ cursor: pointer;
+}
+
+#del{
+   background-color:#57564f86;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  color:#2e2c29;
+ margin-top: 10px;
+ margin-bottom: 10px;
+ font-weight: bold;
+ cursor: pointer;
+ transition: all 0.2s ease;
+ box-shadow:0 2px 4px rgba(35, 35, 35, 0.2) inset;
+}
+#del:active {
+  transform: scale(0.95); /* يصغر حجمه بنسبة 5% */
+  background-color: #241e1e; /* لون أغمق شوي */
 }
