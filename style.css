@@ -1,0 +1,140 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    border: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+    margin: 0%;
+    gap: 35px;
+    box-sizing: border-box;
+    background: linear-gradient(to right,#57564F,#DDDAD0);
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+h1{
+    color: #22211e;
+    font-weight:900;
+    text-align: center;
+    margin: 10px;
+    font-size: 2.9em;
+    letter-spacing: 0.9px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+#addbookbtn{
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3a3832;
+    color: #DDDAD0;
+    font-weight: 900;
+    font-size:medium;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+    outline: none;
+    
+}
+#addbookbtn:active {
+  transform: scale(0.95); /* يصغر حجمه بنسبة 5% */
+  background-color: #241e1e; /* لون أغمق شوي */
+ 
+}
+
+/* .booklist{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+} */
+
+
+form{
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: medium;
+    font-weight: 600;
+    color: #2c2a26;
+}
+input{
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 4px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background-color: #22211e9f;
+    outline: none;
+    color: #DDDAD0;
+    font-size: medium;
+}
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: none;
+  
+  
+}
+span {
+  display: inline-block;           /* يخلي العنصر يعامل ككتلة صغيرة */
+  padding: 8px 8px;               /* مساحة داخلية حول النص */
+ border: none;
+  background-color: #363226c0;
+  border-radius: 20px;             /* حواف مدورة لتبدو كأنها زر */
+  cursor: pointer;                 /* شكل الماوس يتغير ليد عند المرور */
+  transition: all 0.2s ease;       /* حركة ناعمة لتغير اللون عند التحديد */
+  
+}
+/* 3. تأثير لما يكون الخيار محدد */
+ input[type="radio"]:checked + span{
+  background-color: #c9be6d;  /* لون خلفية أخضر */
+  color: white;               /* لون الخط أبيض */
+  border:2px solid #22211e;
+}
+#submitbtn{
+  margin: 30px 0px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(to left,#2b2a26,#535047);
+  color: #e7e4d1;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+ transition: all 0.2s ease;
+ box-shadow:0 2px 4px rgba(35, 35, 35, 0.2) inset;
+}
+
+
+
+
+
+
+dialog {
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #e7e4c7d5;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  max-width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}

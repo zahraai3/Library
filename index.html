@@ -7,8 +7,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>My Library</h1>
     
+    <div class="container">
+        <div class="addbtn">
+            <button id="addbookbtn">+ Add a Book</button>
+        </div>
 
+        <dialog  class="booklist">
+            <form action="" method="dialog">
+                <label for="title">Book Name:
+                    <input type="text" id="title" name="name" placeholder="Add book title" required>
+                </label>
+
+                <label for="author">Author Name:
+                    <input type="text" id="author" name="author" placeholder="Author name here" required>
+                </label>
+
+                <label for="description">Description:
+                    <input type="text" id="description" name="description" required>
+                </label>
+
+                <label>
+                    
+                    <input type="radio" name="read" value="true">
+                    <span></span> Done reading
+                    
+                </label>
+                <label>
+                    
+                    <input type="radio" name="read" value="false" checked> 
+                    <span></span> Not readed
+                </label>
+
+
+                <button id="submitbtn" type="submit">Add Book</button>
+            </form>
+        </dialog>
+    </div>
+
+    <div class="list"></div>
 
     <script src="script.js"></script>
 </body>
